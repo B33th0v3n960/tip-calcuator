@@ -1,0 +1,47 @@
+.value {
+  border: none;
+  border-radius: 5px;
+
+  font-size: var(--input-fsz);
+  font-family: inherit;
+  font-weight: 600;
+  color: white;
+
+  min-width: 100px;
+  height: 50px;
+  background-color: #00494d;
+}
+
+.custom-percentage-input {
+  display: inline-block;
+  min-width: 100px;
+  height: 50px;
+  background-color: #f4f8fb;
+
+  border: none;
+  border-radius: 5px;
+
+  color: #00494d;
+  text-align: center;
+  font-family: inherit;
+  font-size: var(--input-fsz);
+  font-weight: 600;
+}
+
+.label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #00494d;
+}
+
+.tip-percentage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 700px) {
+  .tip-percentage {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

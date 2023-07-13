@@ -1,0 +1,11 @@
+.logo {
+  display: block;
+  margin: 50px auto;
+}
+
+.main-card {
+  height: 90vh;
+  border-radius: 25px;
+  background-color: white;
+  padding: 20px;
+}
