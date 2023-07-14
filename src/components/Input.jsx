@@ -1,38 +1,61 @@
 import '../css/Input.css'
 
-export function PercentageBtn({ value }) {
-  return <button className='value'>{value}%</button>
+function PercentageBtn({ value }) {
+  return (
+    <button className='input-reset percentage__btn percentage__btn--dark'>
+      {value}%
+    </button>
+  )
 }
 
-export function CustomPercentage() {
+function CustomPercentage() {
   return (
     <input
-      className='custom-percentage-input'
+      className='input-reset percentage__btn percentage__btn--light'
       type='number'
       placeholder='Custom'
     />
   )
 }
 
+export function InputGroup({ icon }) {
+  return (
+    <div className='input-box'>
+      <img src={icon} alt='dollar' />
+      <input
+        type='number'
+        placeholder='0'
+        className='input-reset input-box__input'
+      />
+    </div>
+  )
+}
+
 export function TipPercentage() {
   return (
-    <div className='tip-percentage'>
-      <PercentageBtn value='5' />
-      <PercentageBtn value='10' />
-      <PercentageBtn value='15' />
-      <PercentageBtn value='20' />
-      <PercentageBtn value='25' />
-      <CustomPercentage />
-    </div>
+    <>
+      <label htmlFor='input' className='label'>
+        Select Tip %
+      </label>
+      <form className='percentage__form'>
+        <PercentageBtn value='5' />
+        <PercentageBtn value='10' />
+        <PercentageBtn value='15' />
+        <PercentageBtn value='20' />
+        <PercentageBtn value='25' />
+        <CustomPercentage />
+      </form>
+    </>
   )
 }
 
-export function InputGroup({ message, Component }) {
+export function FormGroup({ message, icon }) {
   return (
-    <div>
-      <label htmlFor="input" className='label'>{message}</label>
-      <Component />
-    </div>
+    <>
+      <label htmlFor='input' className='label'>
+        {message}
+      </label>
+      <InputGroup icon={icon} />
+    </>
   )
 }
-

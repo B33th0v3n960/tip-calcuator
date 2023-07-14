@@ -1,6 +1,8 @@
 import '../css/App.css'
 import logo from '../assets/logo.svg'
-import { InputGroup, TipPercentage } from './Input'
+import dollar from '../assets/icon-dollar.svg'
+import person from '../assets/icon-person.svg'
+import { FormGroup, TipPercentage, InputGroup } from './Input'
 
 export default function App() {
   return (
@@ -14,7 +16,9 @@ export default function App() {
 function Main() {
   return (
     <div className='main-card'>
-      <InputGroup message='Select Tip %' Component={TipPercentage} />
+      <FormGroup message='Bill' icon={dollar} />
+      <TipPercentage />
+      <FormGroup message='Number of People' icon={person} />
     </div>
   )
 }

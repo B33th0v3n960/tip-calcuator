@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   background-color: #c5e4e7;
 
@@ -17,6 +21,12 @@
   /* variables */
   --title-fsz: 6rem;
   --input-fsz: 2.4rem;
+
+  --dark-green: #00494d;
+  --green-cyan: #26c0ab;
+  --light-gray: #f4f8fb;
+  --cyan-gray: #9ebbbd;
+  --bg-cyan: #c5e4e7;
 }
 
 /* Removes the arrow for number input */

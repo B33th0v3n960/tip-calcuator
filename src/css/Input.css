@@ -1,47 +1,65 @@
-.value {
+.input-reset {
   border: none;
-  border-radius: 5px;
-
-  font-size: var(--input-fsz);
-  font-family: inherit;
-  font-weight: 600;
-  color: white;
-
-  min-width: 100px;
-  height: 50px;
-  background-color: #00494d;
 }
 
-.custom-percentage-input {
-  display: inline-block;
+.percentage__btn {
   min-width: 100px;
   height: 50px;
-  background-color: #f4f8fb;
-
-  border: none;
   border-radius: 5px;
 
-  color: #00494d;
-  text-align: center;
   font-family: inherit;
   font-size: var(--input-fsz);
   font-weight: 600;
+  text-align: center;
+}
+
+.percentage__btn--dark {
+  background-color: var(--dark-green);
+  color: white;
+}
+
+.percentage__btn--light {
+  background-color: var(--light-gray);
+  color: var(--dark-green);
 }
 
 .label {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #00494d;
+  color: var(--dark-green);
 }
 
-.tip-percentage {
+.input-box {
+  padding: 2.5px 15px;
+  border-radius: 5px;
+  background-color: var(--light-gray);
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+}
+
+.input-box__input {
+  height: 100%;
+  width: 100%;
+
+  font: inherit;
+  font-size: var(--input-fsz);
+  font-weight: 600;
+  color: var(--dark-green);
+
+  text-align: right;
+  background-color: var(--light-gray);
+}
+
+.percentage__form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
 @media (min-width: 700px) {
-  .tip-percentage {
+  .percentage__form {
     grid-template-columns: repeat(3, 1fr);
   }
 }
