@@ -18,7 +18,7 @@ function CustomPercentage() {
   )
 }
 
-export function InputGroup({ icon }) {
+function InputGroup({ icon }) {
   return (
     <div className='input-box'>
       <img src={icon} alt='dollar' />

@@ -4,8 +4,7 @@
 }
 
 .main-card {
-  height: 90vh;
-  border-radius: 25px;
+  border-radius: 25px 25px 0 0;
   background-color: white;
   padding: 20px;
 }

@@ -1,0 +1,46 @@
+.total__card {
+  background-color: var(--dark-green);
+  margin: 20px 0;
+  border-radius: 20px;
+
+  padding: 20px;
+}
+
+.total__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--input-fsz);
+  font-weight: 600;
+  color: white;
+  margin: 40px 0;
+
+}
+
+.reset__btn {
+  color: var(--dark-green);
+  background-color: var(--green-cyan);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--input-fsz);
+  font-weight: 600;
+  padding: 10px;
+  width: 100%;
+}
+
+.total__value {
+  margin: 0;
+  font-size: 4rem;
+  color: var(--green-cyan);
+}
+
+.label__main {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.label__sub {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+}
