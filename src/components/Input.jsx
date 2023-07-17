@@ -33,8 +33,8 @@ function InputGroup({ icon }) {
 
 export function TipPercentage() {
   return (
-    <>
-      <label htmlFor='input' className='label'>
+    <div className='percentage__container'>
+      <label htmlFor='input' className='percentage__label'>
         Select Tip %
       </label>
       <form className='percentage__form'>
@@ -45,14 +45,14 @@ export function TipPercentage() {
         <PercentageBtn value='25' />
         <CustomPercentage />
       </form>
-    </>
+    </div>
   )
 }
 
 export function FormGroup({ message, icon }) {
   return (
     <>
-      <label htmlFor='input' className='label'>
+      <label htmlFor='input' className='percentage__label'>
         {message}
       </label>
       <InputGroup icon={icon} />

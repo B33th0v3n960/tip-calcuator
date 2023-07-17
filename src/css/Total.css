@@ -1,46 +1,53 @@
 .total__card {
   background-color: var(--dark-green);
-  margin: 20px 0;
-  border-radius: 20px;
+  border-radius: 15px;
+  padding: 30px;
 
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .total__label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   font-size: var(--input-fsz);
   font-weight: 600;
   color: white;
-  margin: 40px 0;
 
+  margin-bottom: 30px;
 }
 
 .reset__btn {
-  color: var(--dark-green);
   background-color: var(--green-cyan);
+
   border: none;
   border-radius: 5px;
+
+  color: var(--dark-green);
   font-size: var(--input-fsz);
   font-weight: 600;
+
   padding: 10px;
   width: 100%;
 }
 
 .total__value {
+  font-size: 3.2rem;
   margin: 0;
-  font-size: 4rem;
   color: var(--green-cyan);
 }
 
 .label__main {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 .label__sub {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 400;
+  color: #1698a1;
   margin: 0;
 }

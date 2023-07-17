@@ -1,19 +1,22 @@
 import '../css/Total.css'
 
-export default function TotalCard() {
+export default function TotalCard({ tipAmount, total }) {
   return (
     <div className='total__card'>
-      <DisplayAmount label='Tip Amount' value='$30.00' />
-      <DisplayAmount label='Tip Amount' value='$12.00' />
+      <span>
+        <DisplayAmount label='Tip Amount' value={'$' + tipAmount} />
+        <DisplayAmount label='Total' value={'$' + total} />
+      </span>
+
       <ResetBtn />
     </div>
   )
 }
 
-function TotalLabel() {
+function TotalLabel({ label }) {
   return (
     <span>
-      <p className='label__main'>Tip Amount</p>
+      <p className='label__main'>{label}</p>
       <p className='label__sub'>/ Per Person</p>
     </span>
   )
@@ -22,7 +25,7 @@ function TotalLabel() {
 function DisplayAmount({ label, value }) {
   return (
     <div className='total__label'>
-      <TotalLabel />
+      <TotalLabel label={label} />
       <p className='total__value'>{value}</p>
     </div>
   )

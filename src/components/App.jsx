@@ -17,10 +17,13 @@ export default function App() {
 function Main() {
   return (
     <div className='main-card'>
-      <FormGroup message='Bill' icon={dollar} />
-      <TipPercentage />
-      <FormGroup message='Number of People' icon={person} />
-      <TotalCard />
+      <div className='main__input'>
+        <FormGroup message='Bill' icon={dollar} />
+        <TipPercentage />
+        <FormGroup message='Number of People' icon={person} />
+      </div>
+
+      <TotalCard tipAmount='3.00' total='32.00' />
     </div>
   )
 }

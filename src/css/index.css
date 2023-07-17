@@ -8,7 +8,13 @@
   background-color: #c5e4e7;
 
   /* font settings */
-  font-family: Space Mono, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    Space Mono,
+    Inter,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
   font-weight: 400;
@@ -41,8 +47,16 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+input:hover,
+input:active,
+input:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 h1 {

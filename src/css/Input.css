@@ -2,6 +2,10 @@
   border: none;
 }
 
+.percentage__container {
+  margin: 20px 0;
+}
+
 .percentage__btn {
   min-width: 100px;
   height: 50px;
@@ -23,7 +27,7 @@
   color: var(--dark-green);
 }
 
-.label {
+.percentage__label {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--dark-green);
