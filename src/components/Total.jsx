@@ -16,21 +16,22 @@ export default function TotalCard({ tipAmount, total }) {
 function TotalLabel({ label }) {
   return (
     <span>
-      <p className='label__main'>{label}</p>
-      <p className='label__sub'>/ Per Person</p>
+      <label className='label__main'>{label}</label>
+      <span className='label__sub'>/ Per Person</span>
     </span>
   )
 }
 
 function DisplayAmount({ label, value }) {
   return (
-    <div className='total__label'>
+    <div className='total__amount'>
       <TotalLabel label={label} />
       <p className='total__value'>{value}</p>
     </div>
   )
 }
 
+// Reset btn
 function ResetBtn() {
   return <button className='reset__btn'>Reset</button>
 }

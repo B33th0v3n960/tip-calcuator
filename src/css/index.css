@@ -10,10 +10,7 @@
   /* font settings */
   font-family:
     Space Mono,
-    Inter,
-    Avenir,
     Helvetica,
-    Arial,
     sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
@@ -53,12 +50,21 @@ input:focus {
   outline: none;
 }
 
-body {
-  margin: 0;
-  /* display: flex; */
-  /* align-items: center; */
+button,
+input {
+  border: none;
+  font-family: inherit;
+  font-size: var(--input-fsz);
+  font-weight: 600;
+  text-align: center;
 }
 
-h1 {
-  font-size: var(--title-fsz);
+body {
+  margin: 0;
+}
+
+@media (min-width: 750px) {
+  #root {
+    margin-top: 150px;
+  }
 }

@@ -1,33 +1,19 @@
 import '../css/Input.css'
 
+// Tip percentage input field
 function PercentageBtn({ value }) {
   return (
-    <button className='input-reset percentage__btn percentage__btn--dark'>
-      {value}%
-    </button>
+    <button className='percentage__btn percentage__btn--dark'>{value}%</button>
   )
 }
 
 function CustomPercentage() {
   return (
     <input
-      className='input-reset percentage__btn percentage__btn--light'
+      className='percentage__btn percentage__btn--light'
       type='number'
       placeholder='Custom'
     />
-  )
-}
-
-function InputGroup({ icon }) {
-  return (
-    <div className='input-box'>
-      <img src={icon} alt='dollar' />
-      <input
-        type='number'
-        placeholder='0'
-        className='input-reset input-box__input'
-      />
-    </div>
   )
 }
 
@@ -45,6 +31,16 @@ export function TipPercentage() {
         <PercentageBtn value='25' />
         <CustomPercentage />
       </form>
+    </div>
+  )
+}
+
+// Input box
+function InputGroup({ icon }) {
+  return (
+    <div className='input-box'>
+      <img src={icon} alt='dollar' />
+      <input type='number' placeholder='0' className='input-box__input' />
     </div>
   )
 }
