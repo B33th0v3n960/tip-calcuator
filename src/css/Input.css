@@ -7,6 +7,19 @@
   min-width: 100px;
   height: 50px;
   border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type='radio']:checked + label {
+  background-color: #bfb;
+  border-color: #4c4;
+}
+
+input[type='radio']:focus + label{
+  border: 2px dashed #444;
 }
 
 .percentage__btn--dark {
@@ -14,15 +27,36 @@
   color: white;
 }
 
+.percentage__btn--dark:hover {
+  background-color: #9de8df;
+  color: var(--dark-green);
+}
+
 .percentage__btn--light {
   background-color: var(--light-gray);
   color: var(--dark-green);
+}
+
+.percentage__btn--light:hover {
+  box-shadow: 0 0 0 2px var(--green-cyan);
 }
 
 .percentage__label {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--dark-green);
+}
+
+.label__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label__container p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #b58271;
+  margin: 0;
 }
 
 /* Input box */
@@ -34,6 +68,14 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   align-items: center;
+}
+
+.input-box--zero {
+  box-shadow: 0 0 0 2px #b58271;
+}
+
+.input-box:hover {
+  box-shadow: 0 0 0 2px var(--green-cyan);
 }
 
 .input-box__input {
@@ -50,6 +92,7 @@
 }
 
 .percentage__form {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;

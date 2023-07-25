@@ -1,9 +1,13 @@
 import '../css/Input.css'
+import { useState } from 'react'
 
 // Tip percentage input field
 function PercentageBtn({ value }) {
   return (
-    <button className='percentage__btn percentage__btn--dark'>{value}%</button>
+    <label className='percentage__btn percentage__btn--dark'>
+      <input type='radio' value={value} />
+      {value}%
+    </label>
   )
 }
 
@@ -36,22 +40,34 @@ export function TipPercentage() {
 }
 
 // Input box
-function InputGroup({ icon }) {
-  return (
-    <div className='input-box'>
-      <img src={icon} alt='dollar' />
-      <input type='number' placeholder='0' className='input-box__input' />
-    </div>
-  )
-}
+export function FormGroup({ message, icon, action, value }) {
+  const [touched, setTouched] = useState(false)
+  const error = touched ? (!value ? true : false) : null
 
-export function FormGroup({ message, icon }) {
+  function handleInput(e) {
+    action(e.target.value.replace(/^0+/, ''))
+  }
+
   return (
     <>
-      <label htmlFor='input' className='percentage__label'>
-        {message}
+      <span className='label__container'>
+        <label htmlFor='input' className='percentage__label'>
+          {message}
+        </label>
+        {error ? <p>can't be zero</p> : null}
+      </span>
+
+      <label className={error ? 'input-box input-box--zero' : 'input-box'}>
+        <img src={icon} alt={icon} />
+        <input
+          className='input-box__input'
+          placeholder='0'
+          type='number'
+          value={value ?? ''}
+          onChange={handleInput}
+          onBlur={() => setTouched(true)}
+        />
       </label>
-      <InputGroup icon={icon} />
     </>
   )
 }

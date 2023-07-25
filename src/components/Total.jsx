@@ -1,6 +1,6 @@
 import '../css/Total.css'
 
-export default function TotalCard({ tipAmount, total }) {
+export default function TotalCard({ tipAmount, total, active, action }) {
   return (
     <div className='total__card'>
       <span>
@@ -8,7 +8,9 @@ export default function TotalCard({ tipAmount, total }) {
         <DisplayAmount label='Total' value={'$' + total} />
       </span>
 
-      <ResetBtn />
+      <button className={active} onClick={action}>
+        Reset
+      </button>
     </div>
   )
 }
@@ -29,9 +31,4 @@ function DisplayAmount({ label, value }) {
       <p className='total__value'>{value}</p>
     </div>
   )
-}
-
-// Reset btn
-function ResetBtn() {
-  return <button className='reset__btn'>Reset</button>
 }

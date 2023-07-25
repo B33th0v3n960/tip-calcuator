@@ -42,10 +42,23 @@
 
 /* Reset btn */
 .reset__btn {
-  background-color: var(--green-cyan);
   color: var(--dark-green);
 
   border-radius: 5px;
   padding: 10px;
   width: 100%;
+
+  transition: all 0.3s ease-out;
+}
+
+.reset__btn:hover {
+  background-color: #9fe8df;
+}
+
+.reset__btn--active {
+  background-color: var(--green-cyan);
+}
+
+.reset__btn--unactive {
+  background-color: var(--cyan-gray);
 }
