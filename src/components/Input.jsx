@@ -1,39 +1,73 @@
 import '../css/Input.css'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 // Tip percentage input field
-function PercentageBtn({ value }) {
+function PercentageBtn({ value, currentPercentage, action }) {
   return (
-    <label className='percentage__btn percentage__btn--dark'>
-      <input type='radio' value={value} />
-      {value}%
-    </label>
+    <>
+      <input
+        name='percentage'
+        type='radio'
+        id={value}
+        value={value}
+        onChange={action}
+        checked={currentPercentage === value}
+      />
+      <label htmlFor={value} className='percentage__btn percentage__btn--dark'>
+        {value}%
+      </label>
+    </>
   )
 }
 
-function CustomPercentage() {
+function CustomPercentage({ action }) {
   return (
     <input
       className='percentage__btn percentage__btn--light'
       type='number'
       placeholder='Custom'
+      onChange={action}
     />
   )
 }
 
-export function TipPercentage() {
+export function TipPercentage({ value, action }) {
+  function handleInput(e) {
+    action(e.target.value)
+  }
+
   return (
     <div className='percentage__container'>
       <label htmlFor='input' className='percentage__label'>
         Select Tip %
       </label>
       <form className='percentage__form'>
-        <PercentageBtn value='5' />
-        <PercentageBtn value='10' />
-        <PercentageBtn value='15' />
-        <PercentageBtn value='20' />
-        <PercentageBtn value='25' />
-        <CustomPercentage />
+        <PercentageBtn
+          action={handleInput}
+          currentPercentage={value}
+          value='5'
+        />
+        <PercentageBtn
+          action={handleInput}
+          currentPercentage={value}
+          value='10'
+        />
+        <PercentageBtn
+          action={handleInput}
+          currentPercentage={value}
+          value='15'
+        />
+        <PercentageBtn
+          action={handleInput}
+          currentPercentage={value}
+          value='20'
+        />
+        <PercentageBtn
+          action={handleInput}
+          currentPercentage={value}
+          value='25'
+        />
+        <CustomPercentage action={handleInput} />
       </form>
     </div>
   )

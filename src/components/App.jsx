@@ -37,7 +37,7 @@ function Main() {
     <div className='main-card'>
       <div className='main__input'>
         <FormGroup message='Bill' icon={dollar} action={setBill} value={bill} />
-        <TipPercentage />
+        <TipPercentage value={percentage} action={setPercentage} />
         <FormGroup
           message='Number of People'
           icon={person}
