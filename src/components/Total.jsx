@@ -1,33 +1,26 @@
 import '../css/Total.css'
 
-export default function TotalCard({ tipAmount, total, active, action }) {
+export default function TotalCard({ total, action }) {
   return (
     <div className='total__card'>
       <span>
-        <DisplayAmount label='Tip Amount' value={'$' + tipAmount} />
-        <DisplayAmount label='Total' value={'$' + total} />
+        <DisplayAmount label='Tip Amount' value={'$' + total.tip.toFixed(2)} />
+        <DisplayAmount label='Total' value={'$' + total.bill.toFixed(2)} />
       </span>
-
-      <button className={active} onClick={action}>
+      <button className={total.buttonActive} onClick={action}>
         Reset
       </button>
     </div>
   )
 }
 
-function TotalLabel({ label }) {
-  return (
-    <span>
-      <label className='label__main'>{label}</label>
-      <span className='label__sub'>/ Per Person</span>
-    </span>
-  )
-}
-
 function DisplayAmount({ label, value }) {
   return (
     <div className='total__amount'>
-      <TotalLabel label={label} />
+      <span className='total__label'>
+        <h2>{label}</h2>
+        <p>/ Per Person</p>
+      </span>
       <p className='total__value'>{value}</p>
     </div>
   )

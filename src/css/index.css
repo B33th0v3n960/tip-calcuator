@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,10 +8,7 @@
   background-color: #c5e4e7;
 
   /* font settings */
-  font-family:
-    Space Mono,
-    Helvetica,
-    sans-serif;
+  font-family: Space Mono, Helvetica, sans-serif;
   font-size: 62.5%;
   line-height: 1.5;
   font-weight: 400;
@@ -30,6 +27,12 @@
   --light-gray: #f4f8fb;
   --cyan-gray: #9ebbbd;
   --bg-cyan: #c5e4e7;
+
+  --alert: #b58271;
+}
+
+body {
+  margin: 0;
 }
 
 /* Removes the arrow for number input */
@@ -62,12 +65,3 @@ label {
   cursor: pointer;
 }
 
-body {
-  margin: 0;
-}
-
-@media (min-width: 750px) {
-  #root {
-    margin-top: 150px;
-  }
-}

@@ -3,7 +3,7 @@
   margin: 50px auto;
 }
 
-.main-card {
+.main {
   border-radius: 25px 25px 0 0;
   background-color: white;
   padding: 30px;
@@ -17,9 +17,13 @@
 }
 
 @media (min-width: 750px) {
-  .main-card {
+  .main {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     border-radius: 25px;
+  }
+
+  #root {
+    margin-top: 150px;
   }
 }

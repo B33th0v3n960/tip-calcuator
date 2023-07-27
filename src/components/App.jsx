@@ -7,15 +7,6 @@ import { FormGroup, TipPercentage } from './Input'
 import TotalCard from './Total'
 
 export default function App() {
-  return (
-    <>
-      <img className='logo' src={logo} alt='Splitter Logo' />
-      <Main />
-    </>
-  )
-}
-
-function Main() {
   const [bill, setBill] = useState()
   const [people, setPeople] = useState()
   const [percentage, setPercentage] = useState()
@@ -24,13 +15,19 @@ function Main() {
   const errorBillInput = touched1 ? (!bill ? true : false) : null
   const errorPeopleInput = touched2 ? (!people ? true : false) : null
 
-  let tipAmount =
-    (Number(people ?? 0) * Number(bill ?? 0) * Number(percentage ?? 0)) / 100
-  let total = Number(bill ?? 0) + tipAmount
-  let active =
-    tipAmount || total
-      ? 'reset__btn reset__btn--active'
-      : 'reset__btn reset__btn--unactive'
+  class Total {
+    constructor() {
+      const totalPeople = Number(people ?? 0)
+      const totalBill = Number(bill ?? 0)
+      const totalPercentage = Number(percentage ?? 0)
+      this.tip = (totalPeople * totalBill * totalPercentage) / 100
+      this.bill = Number(bill ?? 0) + this.tip
+      this.buttonActive =
+        'reset__btn reset__btn--' +
+        (this.tip || this.total ? 'active' : 'unactive')
+    }
+  }
+  const total = new Total()
 
   function reset() {
     setBill()
@@ -39,35 +36,33 @@ function Main() {
     setTouched1()
     setTouched2()
   }
-
   return (
-    <div className='main-card'>
-      <div className='main__input'>
-        <FormGroup
-          message='Bill'
-          icon={dollar}
-          action={setBill}
-          value={bill}
-          error={errorBillInput}
-          setTouched={setTouched1}
-        />
-        <TipPercentage value={percentage} action={setPercentage} />
-        <FormGroup
-          message='Number of People'
-          icon={person}
-          action={setPeople}
-          value={people}
-          error={errorPeopleInput}
-          setTouched={setTouched2}
-        />
-      </div>
+    <>
+      <img className='logo' src={logo} alt='Splitter Logo' />
+      <div className='main'>
+        <div className='main__input'>
+          <FormGroup
+            label='Bill'
+            icon={dollar}
+            state={[bill, setBill]}
+            error={errorBillInput}
+            setTouched={setTouched1}
+          />
+          <TipPercentage
+            currentPercentage={percentage}
+            action={setPercentage}
+          />
+          <FormGroup
+            label='Number of People'
+            icon={person}
+            state={[people, setPeople]}
+            error={errorPeopleInput}
+            setTouched={setTouched2}
+          />
+        </div>
 
-      <TotalCard
-        tipAmount={tipAmount.toFixed(2)}
-        total={total.toFixed(2)}
-        active={active}
-        action={reset}
-      />
-    </div>
+        <TotalCard total={total} action={reset} />
+      </div>
+    </>
   )
 }

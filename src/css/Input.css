@@ -21,13 +21,8 @@ input[type='radio'] {
   z-index: 100;
 }
 
-input[type='radio']:checked + label {
+input[type='radio']:checked + .percentage__btn--dark {
   background-color: var(--green-cyan);
-  border-color: #4c4;
-}
-
-input[type='radio']:focus + label {
-  box-shadow: 0 0 0 2px var(--green-cyan);
 }
 
 .percentage__btn--dark {
@@ -36,7 +31,7 @@ input[type='radio']:focus + label {
 }
 
 .percentage__btn--dark:hover {
-  background-color: #9de8df;
+  background-color: color-mix(in srgb, var(--green-cyan) 50%, white);
   color: var(--dark-green);
 }
 
@@ -55,6 +50,7 @@ input[type='radio']:focus + label {
   color: var(--dark-green);
 }
 
+/* Input field */
 .label__container {
   display: flex;
   justify-content: space-between;
@@ -63,11 +59,10 @@ input[type='radio']:focus + label {
 .label__container p {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #b58271;
+  color: var(--alert);
   margin: 0;
 }
 
-/* Input box */
 .input-box {
   padding: 2.5px 15px;
   border-radius: 5px;
@@ -79,7 +74,7 @@ input[type='radio']:focus + label {
 }
 
 .input-box--zero {
-  box-shadow: 0 0 0 2px #b58271;
+  box-shadow: 0 0 0 2px var(--alert);
 }
 
 .input-box:hover {
