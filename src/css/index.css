@@ -42,6 +42,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+  cursor: text;
 }
 
 input:hover,
@@ -58,6 +59,7 @@ label {
   font-size: var(--input-fsz);
   font-weight: 600;
   text-align: center;
+  cursor: pointer;
 }
 
 body {

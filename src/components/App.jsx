@@ -18,7 +18,12 @@ export default function App() {
 function Main() {
   const [bill, setBill] = useState()
   const [people, setPeople] = useState()
-  const [percentage, setPercentage] = useState(25)
+  const [percentage, setPercentage] = useState()
+  const [touched1, setTouched1] = useState(false)
+  const [touched2, setTouched2] = useState(false)
+  const errorBillInput = touched1 ? (!bill ? true : false) : null
+  const errorPeopleInput = touched2 ? (!people ? true : false) : null
+
   let tipAmount =
     (Number(people ?? 0) * Number(bill ?? 0) * Number(percentage ?? 0)) / 100
   let total = Number(bill ?? 0) + tipAmount
@@ -31,18 +36,29 @@ function Main() {
     setBill()
     setPeople()
     setPercentage()
+    setTouched1()
+    setTouched2()
   }
 
   return (
     <div className='main-card'>
       <div className='main__input'>
-        <FormGroup message='Bill' icon={dollar} action={setBill} value={bill} />
+        <FormGroup
+          message='Bill'
+          icon={dollar}
+          action={setBill}
+          value={bill}
+          error={errorBillInput}
+          setTouched={setTouched1}
+        />
         <TipPercentage value={percentage} action={setPercentage} />
         <FormGroup
           message='Number of People'
           icon={person}
           action={setPeople}
           value={people}
+          error={errorPeopleInput}
+          setTouched={setTouched2}
         />
       </div>
 

@@ -20,13 +20,14 @@ function PercentageBtn({ value, currentPercentage, action }) {
   )
 }
 
-function CustomPercentage({ action }) {
+function CustomPercentage({ action, value }) {
   return (
     <input
       className='percentage__btn percentage__btn--light'
       type='number'
       placeholder='Custom'
       onChange={action}
+      value={value ?? ''}
     />
   )
 }
@@ -35,6 +36,10 @@ export function TipPercentage({ value, action }) {
   function handleInput(e) {
     action(e.target.value)
   }
+
+  const inputDisplayAmount = ['5', '10', '15', '20', '25'].includes(value)
+    ? ''
+    : value
 
   return (
     <div className='percentage__container'>
@@ -67,17 +72,14 @@ export function TipPercentage({ value, action }) {
           currentPercentage={value}
           value='25'
         />
-        <CustomPercentage action={handleInput} />
+        <CustomPercentage value={inputDisplayAmount} action={handleInput} />
       </form>
     </div>
   )
 }
 
 // Input box
-export function FormGroup({ message, icon, action, value }) {
-  const [touched, setTouched] = useState(false)
-  const error = touched ? (!value ? true : false) : null
-
+export function FormGroup({ message, icon, action, value, setTouched, error }) {
   function handleInput(e) {
     action(e.target.value.replace(/^0+/, ''))
   }

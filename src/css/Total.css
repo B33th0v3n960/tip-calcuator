@@ -51,14 +51,17 @@
   transition: all 0.3s ease-out;
 }
 
-.reset__btn:hover {
-  background-color: #9fe8df;
-}
 
 .reset__btn--active {
   background-color: var(--green-cyan);
 }
 
+
+.reset__btn--active:hover {
+  background-color: #9fe8df;
+}
+
 .reset__btn--unactive {
   background-color: var(--cyan-gray);
+  cursor: not-allowed;
 }
