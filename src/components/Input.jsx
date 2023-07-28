@@ -11,7 +11,6 @@ export function TipPercentage({ currentPercentage, action }) {
   const handleInput = (e) => {
     action(e.target.value)
     setDiplayAmount()
-    console.log(buttonPressed)
     setButtonPressed(true)
   }
   const customInput = (e) => {
@@ -68,7 +67,6 @@ export function FormGroup({ label, icon, state, setTouched, error }) {
   if (value > 9999) setValue(9999)
   const handleInput = (e) => {
     setValue(e.target.value.replace(/^0+/, ''))
-    console.log(e.target.value)
   }
 
   return (
