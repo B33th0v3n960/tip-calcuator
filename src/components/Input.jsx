@@ -4,13 +4,20 @@ import '../css/Input.css'
 // Tip percentage input field
 export function TipPercentage({ currentPercentage, action }) {
   const [displayAmount, setDiplayAmount] = useState()
+  const [buttonPressed, setButtonPressed]= useState()
+  if ( !buttonPressed && displayAmount !== currentPercentage) {
+    action()
+  }
   const handleInput = (e) => {
     action(e.target.value)
     setDiplayAmount()
+    console.log(buttonPressed)
+    setButtonPressed(true)
   }
   const customInput = (e) => {
     action(e.target.value.replace(/^0+/, ''))
     setDiplayAmount(e.target.value.replace(/^0+/, ''))
+    setButtonPressed(false)
   }
 
   function PercentageBtn({ value }) {
@@ -58,7 +65,11 @@ export function TipPercentage({ currentPercentage, action }) {
 // Input box
 export function FormGroup({ label, icon, state, setTouched, error }) {
   const [value, setValue] = state
-  const handleInput = (e) => setValue(e.target.value.replace(/^0+/, ''))
+  if (value > 9999) setValue(9999)
+  const handleInput = (e) => {
+    setValue(e.target.value.replace(/^0+/, ''))
+    console.log(e.target.value)
+  }
 
   return (
     <>
@@ -66,10 +77,10 @@ export function FormGroup({ label, icon, state, setTouched, error }) {
         <label htmlFor='input' className='percentage__label'>
           {label}
         </label>
-        {error ? <p>can't be zero</p> : null}
+        {error ? <p>{error}</p> : null}
       </span>
 
-      <label className={error ? 'input-box input-box--zero' : 'input-box'}>
+      <label className={error ? 'input-box input-box--invalid' : 'input-box'}>
         <img src={icon} alt={icon} />
         <input
           className='input-box__input'
@@ -77,6 +88,7 @@ export function FormGroup({ label, icon, state, setTouched, error }) {
           type='number'
           value={value ?? ''}
           onChange={handleInput}
+          max={10000}
           onBlur={() => setTouched(true)}
         />
       </label>

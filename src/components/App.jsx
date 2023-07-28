@@ -12,8 +12,8 @@ export default function App() {
   const [percentage, setPercentage] = useState()
   const [touched1, setTouched1] = useState(false)
   const [touched2, setTouched2] = useState(false)
-  const errorBillInput = touched1 ? (!bill ? true : false) : null
-  const errorPeopleInput = touched2 ? (!people ? true : false) : null
+  const errorBillInput = touched1 ? (!bill ? 'invalid value' : false) : null
+  const errorPeopleInput = touched2 ? (!people ? 'invalid value' : false) : null
 
   class Total {
     constructor() {
@@ -24,7 +24,7 @@ export default function App() {
       this.bill = Number(bill ?? 0) + this.tip
       this.buttonActive =
         'reset__btn reset__btn--' +
-        (this.tip || this.total ? 'active' : 'unactive')
+        (this.tip || this.bill ? 'active' : 'unactive')
     }
   }
   const total = new Total()

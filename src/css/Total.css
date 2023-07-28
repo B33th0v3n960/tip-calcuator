@@ -5,19 +5,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 250px;
 }
 
 .total__amount {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .total__value {
   font-size: 3.2rem;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 0 auto;
   color: var(--green-cyan);
+  max-width: 250px;
+  overflow-x:scroll;
 }
 
 /* The main label and the sublabel */
@@ -25,6 +29,7 @@
   color: white;
   font-size: 1.7rem;
   margin: 2px 0;
+  width: 110px;
 }
 
 .total__label p {
