@@ -21,7 +21,7 @@
   margin: 0 0 0 auto;
   color: var(--green-cyan);
   max-width: 250px;
-  overflow-x:scroll;
+  overflow-x: auto;
 }
 
 /* The main label and the sublabel */
